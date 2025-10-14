@@ -53,16 +53,7 @@ RECAPTCHA_SECRET_KEY=your-recaptcha-secret-key
 
 ### 3. Development
 
-**Option A: Separate Development Servers**
-```bash
-# Terminal 1: React dev server (port 5173)
-npm run dev
-
-# Terminal 2: Flask API server (port 5000)
-python app.py
-```
-
-**Option B: Integrated Production Build**
+**Integrated Production Build**
 ```bash
 # Build React app
 npm run build
@@ -104,4 +95,4 @@ python app.py
 
 ## License
 
-MIT License - see LICENSE file for details
+GNU License - see LICENSE file for details
