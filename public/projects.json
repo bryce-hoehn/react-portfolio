@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Portfolio Website",
+    "description": "Modern React portfolio showcasing UX development skills with responsive design and contact form integration.",
+    "technologies": "React | TypeScript | Tailwind CSS | Vite",
+    "image": "assets/portfolio.png",
+    "alt": "React Portfolio Website",
+    "live": "https://brycehoehn.com",
+    "source": "https://github.com/bryce-hoehn/react-portfolio"
+  },
+  {
+    "title": "Apple Music Electron",
+    "description": "Native desktop wrapper for Apple Music built with Electron, providing a dedicated desktop experience with system integration and keyboard shortcuts.",
+    "technologies": "Electron | JavaScript | Node.js",
+    "image": "assets/electron.png",
+    "alt": "Apple Music Electron App",
+    "live": "",
+    "source": "https://github.com/bryce-hoehn/apple-music-electron"
+  },
+  {
+    "title": "KaraokeTube",
+    "description": "Real-time karaoke app with synchronized lyric playback and multi-user queues. Responsive and interactive UI.",
+    "technologies": "Flask | WebSockets | Javascript",
+    "image": "assets/karaoketube-mobile-ui.png",
+    "alt": "KaraokeTube Screenshot",
+    "live": "",
+    "source": "https://github.com/bryce-hoehn/KaraokeTube"
+  },
+  {
+    "title": "NYT Code Redeemer",
+    "description": "Firefox extension that automatically redeems library codes for New York Times subscriptions.",
+    "technologies": "JavaScript | Firefox Extension | Web APIs",
+    "image": "assets/nyt.png",
+    "alt": "NYT Code Redeemer Extension",
+    "live": "https://addons.mozilla.org/en-US/firefox/addon/nytimes-code-redeemer/",
+    "source": "https://github.com/bryce-hoehn/nyt-code-redeemer"
+  },
+  {
+    "title": "Books-Unlimited",
+    "description": "Class project demonstrating web development fundamentals - a book catalog with search, filtering, and dynamic content rendering.",
+    "technologies": "PHP | MySQL | Javascript",
+    "image": "assets/books-unlimited-dashboard.png",
+    "alt": "Books-Unlimited Screenshot",
+    "live": "https://ischooldev.ischool.kent.edu/~bhoehn/webapp/index.php",
+    "source": "https://github.com/bryce-hoehn/books-unlimited"
+  },
+  {
+    "title": "Discord-M1",
+    "description": "M1-native Electron client for Discord, improving performance on Apple Silicon Macs before official support.",
+    "technologies": "Electron | JavaScript | Node.js",
+    "image": "assets/electron.png",
+    "alt": "Electron logo",
+    "live": "",
+    "source": "https://github.com/bryce-hoehn/Discord-M1"
+  }
+]
