@@ -15,7 +15,7 @@ export function Portfolio({ isLoading, portfolioProjects }: PortfolioProps) {
         {/* Icon Divider */}
         <div className="flex items-center justify-center mb-12">
           <div className="w-16 h-1 bg-gray-800"></div>
-          <div className="mx-4 text-2xl text-blue-600"><i className="fas fa-star"></i></div>
+          <div className="mx-4 text-2xl text-blue-600"><span className="fas fa-star"></span></div>
           <div className="w-16 h-1 bg-gray-800"></div>
         </div>
         <div className="flex justify-center">

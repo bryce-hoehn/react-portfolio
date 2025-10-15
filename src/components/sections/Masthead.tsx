@@ -16,7 +16,7 @@ export function Masthead() {
         {/* Icon Divider */}
         <div className="flex items-center justify-center mb-6">
           <div className="w-16 h-1 bg-white"></div>
-          <div className="mx-4 text-2xl"><i className="fas fa-star"></i></div>
+          <div className="mx-4 text-2xl"><span className="fas fa-star"></span></div>
           <div className="w-16 h-1 bg-white"></div>
         </div>
         {/* Masthead Subheading */}
