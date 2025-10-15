@@ -17,6 +17,7 @@ export function Footer({ scrollToTop, showScrollTop }: FooterProps) {
                   <a 
                     className="bg-transparent border-2 border-white text-white p-3 rounded-full hover:bg-white hover:text-gray-800 transition-all duration-300 transform hover:scale-110 flex items-center justify-center w-12 h-12" 
                     href="https://www.linkedin.com/in/brycehoehn/"
+                    target="_blank"
                     aria-label="LinkedIn"
                   >
                     <i className="fab fa-linkedin-in text-lg"></i>
@@ -24,6 +25,7 @@ export function Footer({ scrollToTop, showScrollTop }: FooterProps) {
                   <a 
                     className="bg-transparent border-2 border-white text-white p-3 rounded-full hover:bg-white hover:text-gray-800 transition-all duration-300 transform hover:scale-110 flex items-center justify-center w-12 h-12" 
                     href="https://github.com/bryce-hoehn"
+                    target="_blank"
                     aria-label="GitHub"
                   >
                     <i className="fab fa-github text-lg"></i>
