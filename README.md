@@ -1,4 +1,4 @@
-# Bryce Hoehn - React Portfolio with Flask Backend
+# React Portfolio with Flask Backend
 
 A modern portfolio website built with React, TypeScript, and Flask. Features a responsive design, contact form with Google reCAPTCHA protection, and email integration.
 
@@ -15,7 +15,7 @@ A modern portfolio website built with React, TypeScript, and Flask. Features a r
 ```
 react-portfolio/
 ├── src/                 # React source code (TypeScript)
-├── public/             # Static assets (projects.json, resume.pdf)
+├── public/             # Static assets (projects.json, images)
 ├── dist/               # Built React app (generated)
 ├── app.py              # Flask backend server
 ├── requirements.txt    # Python dependencies
@@ -66,8 +66,8 @@ python app.py
 
 1. Get API keys from [Google reCAPTCHA Admin Console](https://www.google.com/recaptcha/admin)
 2. Choose "reCAPTCHA v2" → "I'm not a robot" Checkbox
-3. Add domains: `localhost` (development) and your production domain
-4. Update `.env` with your site key and secret key
+3. Add domains: `localhost` (development) and production domain
+4. Update `.env` with site key and secret key
 5. Replace the placeholder site key in `src/App.tsx`
 
 ## Available Scripts
