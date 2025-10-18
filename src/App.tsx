@@ -6,7 +6,7 @@ import { Footer } from './components/layout/Footer'
 import { usePortfolio } from './hooks/usePortfolio'
 import { useScroll } from './hooks/useScroll'
 import { useContactForm } from './hooks/useContactForm'
-import { useRecaptcha } from './hooks/useRecaptcha'
+import { useTurnstile } from './hooks/useTurnstile'
 
 function App() {
   // Custom hooks for business logic
@@ -19,10 +19,10 @@ function App() {
     formErrors,
     handleInputChange,
     handleSubmit,
-    setRecaptchaToken,
-    clearRecaptchaToken
+    setTurnstileToken,
+    clearTurnstileToken
   } = useContactForm()
-  const { recaptchaRef, resetRecaptcha } = useRecaptcha(setRecaptchaToken, clearRecaptchaToken)
+  const { turnstileRef, resetTurnstile } = useTurnstile(setTurnstileToken, clearTurnstileToken)
 
 
   return (
@@ -47,9 +47,9 @@ function App() {
           isSubmitting={isSubmitting}
           formFeedback={formFeedback}
           formErrors={formErrors}
-          recaptchaRef={recaptchaRef}
+          turnstileRef={turnstileRef}
           handleInputChange={handleInputChange}
-          handleSubmit={(e) => handleSubmit(e, resetRecaptcha)}
+          handleSubmit={(e) => handleSubmit(e, resetTurnstile)}
         />
 
         <Footer 

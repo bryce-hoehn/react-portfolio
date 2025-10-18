@@ -1,12 +1,12 @@
 # React Portfolio with Flask Backend
 
-A modern portfolio website built with React, TypeScript, and Flask. Features a responsive design, contact form with Google reCAPTCHA protection, and email integration.
+A modern portfolio website built with React, TypeScript, and Flask. Features a responsive design, contact form with Cloudflare Turnstile protection, and email integration.
 
 ## Features
 
 - **React Frontend**: Modern, responsive design with TypeScript
 - **Flask Backend**: Integrated Python backend for contact form processing
-- **Google reCAPTCHA**: Spam protection for the contact form
+- **Cloudflare Turnstile**: Spam protection for the contact form
 - **Email Integration**: Contact form sends emails via SMTP
 - **Production Ready**: Flask serves the built React app
 
@@ -46,9 +46,9 @@ Copy `.env.example` to `.env` and configure:
 EMAIL_ADDRESS=your-email@example.com
 EMAIL_PASSWORD=your-email-password
 
-# Google reCAPTCHA Configuration
-RECAPTCHA_SITE_KEY=your-recaptcha-site-key
-RECAPTCHA_SECRET_KEY=your-recaptcha-secret-key
+# Cloudflare Turnstile Configuration
+TURNSTILE_SITE_KEY=your-turnstile-site-key
+TURNSTILE_SECRET_KEY=your-turnstile-secret-key
 ```
 
 ### 3. Development
@@ -62,13 +62,12 @@ npm run build
 python app.py
 ```
 
-## Google reCAPTCHA Setup
+## Cloudflare Turnstile Setup
 
-1. Get API keys from [Google reCAPTCHA Admin Console](https://www.google.com/recaptcha/admin)
-2. Choose "reCAPTCHA v2" → "I'm not a robot" Checkbox
-3. Add domains: `localhost` (development) and production domain
-4. Update `.env` with site key and secret key
-5. Replace the placeholder site key in `src/App.tsx`
+1. Get API keys from [Cloudflare Turnstile Dashboard](https://dash.cloudflare.com/?to=/:account/turnstile)
+2. Add domain
+3. Update `.env` with site key and secret key
+4. Replace the placeholder site key in `src/hooks/useTurnstile.ts`
 
 ## Available Scripts
 
@@ -81,14 +80,14 @@ python app.py
 
 - **Frontend**: React 18, TypeScript, Vite, Tailwind CSS
 - **Backend**: Flask, Python 3
-- **Security**: Google reCAPTCHA v2
+- **Security**: Cloudflare Turnstile
 - **Email**: SMTP with SSL
 - **Deployment**: Flask static file serving
 
 ## Contact Form Features
 
 - Real-time form validation
-- Google reCAPTCHA protection
+- Cloudflare Turnstile protection
 - Loading states and user feedback
 - Email delivery via SMTP
 - Server-side spam protection

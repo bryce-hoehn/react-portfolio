@@ -15,7 +15,7 @@ export function useContactForm() {
     name: '',
     email: '',
     message: '',
-    recaptcha_token: ''
+    turnstile_token: ''
   })
 
   const validateField = (name: string, value: string): string | undefined => {
@@ -65,26 +65,26 @@ export function useContactForm() {
     return !errors.name && !errors.email && !errors.message
   }
 
-  const setRecaptchaToken = (token: string) => {
+  const setTurnstileToken = (token: string) => {
     setFormData(prev => ({
       ...prev,
-      recaptcha_token: token
+      turnstile_token: token
     }))
   }
 
-  const clearRecaptchaToken = () => {
+  const clearTurnstileToken = () => {
     setFormData(prev => ({
       ...prev,
-      recaptcha_token: ''
+      turnstile_token: ''
     }))
   }
 
   const resetForm = () => {
-    setFormData({ name: '', email: '', message: '', recaptcha_token: '' })
+    setFormData({ name: '', email: '', message: '', turnstile_token: '' })
     setFormErrors({})
   }
 
-  const handleSubmit = async (e: React.FormEvent, resetRecaptcha: () => void) => {
+  const handleSubmit = async (e: React.FormEvent, resetTurnstile: () => void) => {
     e.preventDefault()
     setIsSubmitting(true)
     setFormFeedback('')
@@ -96,8 +96,8 @@ export function useContactForm() {
       return
     }
 
-    if (!formData.recaptcha_token) {
-      setFormFeedback('Please complete the reCAPTCHA verification.')
+    if (!formData.turnstile_token) {
+      setFormFeedback('Please complete the verification.')
       setIsSubmitting(false)
       return
     }
@@ -116,15 +116,15 @@ export function useContactForm() {
       if (response.ok && result.success) {
         setFormFeedback(result.success)
         resetForm()
-        resetRecaptcha()
+        resetTurnstile()
       } else {
         setFormFeedback(result.error || 'Failed to send message. Please try again.')
-        resetRecaptcha()
+        resetTurnstile()
       }
     } catch (error) {
       console.error('Error submitting form:', error)
       setFormFeedback('Failed to send message. Please check your connection and try again.')
-      resetRecaptcha()
+      resetTurnstile()
     } finally {
       setIsSubmitting(false)
     }
@@ -137,8 +137,8 @@ export function useContactForm() {
     formErrors,
     handleInputChange,
     handleSubmit,
-    setRecaptchaToken,
-    clearRecaptchaToken,
+    setTurnstileToken,
+    clearTurnstileToken,
     resetForm
   }
 }

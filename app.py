@@ -24,11 +24,11 @@ def serve_react_app(path):
     else:
         return send_from_directory(app.static_folder, 'index.html')
 
-def verify_recaptcha(token):
-    """Verify Google reCAPTCHA token"""
-    secret_key = os.environ.get("RECAPTCHA_SECRET_KEY")
+def verify_turnstile(token):
+    """Verify Cloudflare Turnstile token"""
+    secret_key = os.environ.get("TURNSTILE_SECRET_KEY")
     if not secret_key:
-        return False, "reCAPTCHA secret key not configured"
+        return False, "Turnstile secret key not configured"
     
     data = {
         'secret': secret_key,
@@ -37,7 +37,7 @@ def verify_recaptcha(token):
     
     try:
         response = requests.post(
-            'https://www.google.com/recaptcha/api/siteverify',
+            'https://challenges.cloudflare.com/turnstile/v0/siteverify',
             data=data,
             timeout=10
         )
@@ -52,19 +52,19 @@ def contact():
     name = data.get('name', '')
     email = data.get('email', '')
     message = data.get('message', '')
-    recaptcha_token = data.get('recaptcha_token', '')
+    turnstile_token = data.get('turnstile_token', '')
 
     if not message.strip():
         return jsonify(error="Message cannot be empty."), 400
 
-    # Verify reCAPTCHA
-    if not recaptcha_token:
-        return jsonify(error="Please complete the reCAPTCHA verification."), 400
+    # Verify Turnstile
+    if not turnstile_token:
+        return jsonify(error="Please complete the verification."), 400
 
-    recaptcha_valid, recaptcha_errors = verify_recaptcha(recaptcha_token)
-    if not recaptcha_valid:
-        print(f"reCAPTCHA verification failed: {recaptcha_errors}")
-        return jsonify(error="reCAPTCHA verification failed. Please try again."), 400
+    turnstile_valid, turnstile_errors = verify_turnstile(turnstile_token)
+    if not turnstile_valid:
+        print(f"Turnstile verification failed: {turnstile_errors}")
+        return jsonify(error="Verification failed. Please try again."), 400
 
     msg = EmailMessage()
     msg['Subject'] = f"Portfolio Contact from {name}"

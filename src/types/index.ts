@@ -12,7 +12,7 @@ export interface FormData {
   name: string
   email: string
   message: string
-  recaptcha_token: string
+  turnstile_token: string
 }
 
 export interface FormResponse {

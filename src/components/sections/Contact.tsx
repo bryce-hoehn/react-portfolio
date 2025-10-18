@@ -13,7 +13,7 @@ interface ContactProps {
     email?: string
     message?: string
   }
-  recaptchaRef: React.RefObject<HTMLDivElement | null>
+  turnstileRef: React.RefObject<HTMLDivElement | null>
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
   handleSubmit: (e: React.FormEvent) => void
 }
@@ -23,7 +23,7 @@ export function Contact({
   isSubmitting,
   formFeedback,
   formErrors,
-  recaptchaRef,
+  turnstileRef,
   handleInputChange,
   handleSubmit
 }: ContactProps) {
@@ -96,22 +96,14 @@ export function Contact({
             )}
           </div>
           
-          {/* Google reCAPTCHA */}
+          {/* Cloudflare Turnstile */}
           <div className="mb-6 flex justify-center">
-            <div
-              className="g-recaptcha"
-              data-sitekey="6LfKaeorAAAAADbmnSCnNxLb4INgvB9RuXFCw_W-"
-              data-callback="handleRecaptchaCallback"
-              data-expired-callback="handleRecaptchaExpiredCallback"
-              data-error-callback="handleRecaptchaErrorCallback"
-              data-size="normal"
-              ref={recaptchaRef}
-            ></div>
+            <div ref={turnstileRef}></div>
           </div>
           
           <Button 
             type="submit" 
-            disabled={isSubmitting || !formData.recaptcha_token}
+            disabled={isSubmitting || !formData.turnstile_token}
             className="w-full"
             size="lg"
           >
