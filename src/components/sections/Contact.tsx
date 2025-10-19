@@ -2,6 +2,7 @@ import { Button } from '../ui/button'
 import { Input } from '../ui/input'
 import { Textarea } from '../ui/textarea'
 import { Label } from '../ui/label'
+import Turnstile from 'react-turnstile'
 import type { FormData } from '../../types'
 
 interface ContactProps {
@@ -13,7 +14,8 @@ interface ContactProps {
     email?: string
     message?: string
   }
-  turnstileRef: React.RefObject<HTMLDivElement | null>
+  setTurnstileToken: (token: string) => void
+  clearTurnstileToken: () => void
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
   handleSubmit: (e: React.FormEvent) => void
 }
@@ -23,7 +25,8 @@ export function Contact({
   isSubmitting,
   formFeedback,
   formErrors,
-  turnstileRef,
+  setTurnstileToken,
+  clearTurnstileToken,
   handleInputChange,
   handleSubmit
 }: ContactProps) {
@@ -98,7 +101,14 @@ export function Contact({
           
           {/* Cloudflare Turnstile */}
           <div className="mb-6 flex justify-center">
-            <div ref={turnstileRef}></div>
+            <Turnstile
+              sitekey={import.meta.env.VITE_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"}
+              onVerify={setTurnstileToken}
+              onError={clearTurnstileToken}
+              onExpire={clearTurnstileToken}
+              theme="light"
+              size="normal"
+            />
           </div>
           
           <Button 

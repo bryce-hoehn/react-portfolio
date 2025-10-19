@@ -6,7 +6,6 @@ import { Footer } from './components/layout/Footer'
 import { usePortfolio } from './hooks/usePortfolio'
 import { useScroll } from './hooks/useScroll'
 import { useContactForm } from './hooks/useContactForm'
-import { useTurnstile } from './hooks/useTurnstile'
 
 function App() {
   // Custom hooks for business logic
@@ -22,7 +21,6 @@ function App() {
     setTurnstileToken,
     clearTurnstileToken
   } = useContactForm()
-  const { turnstileRef, resetTurnstile } = useTurnstile(setTurnstileToken, clearTurnstileToken)
 
 
   return (
@@ -47,9 +45,10 @@ function App() {
           isSubmitting={isSubmitting}
           formFeedback={formFeedback}
           formErrors={formErrors}
-          turnstileRef={turnstileRef}
+          setTurnstileToken={setTurnstileToken}
+          clearTurnstileToken={clearTurnstileToken}
           handleInputChange={handleInputChange}
-          handleSubmit={(e) => handleSubmit(e, resetTurnstile)}
+          handleSubmit={handleSubmit}
         />
 
         <Footer 

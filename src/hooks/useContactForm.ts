@@ -84,7 +84,7 @@ export function useContactForm() {
     setFormErrors({})
   }
 
-  const handleSubmit = async (e: React.FormEvent, resetTurnstile: () => void) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
     setFormFeedback('')
@@ -116,15 +116,15 @@ export function useContactForm() {
       if (response.ok && result.success) {
         setFormFeedback(result.success)
         resetForm()
-        resetTurnstile()
+        clearTurnstileToken() // Clear turnstile token on success
       } else {
         setFormFeedback(result.error || 'Failed to send message. Please try again.')
-        resetTurnstile()
+        clearTurnstileToken() // Clear turnstile token on error
       }
     } catch (error) {
       console.error('Error submitting form:', error)
       setFormFeedback('Failed to send message. Please check your connection and try again.')
-      resetTurnstile()
+      clearTurnstileToken() // Clear turnstile token on error
     } finally {
       setIsSubmitting(false)
     }
