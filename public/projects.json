@@ -1,4 +1,13 @@
 [
+    {
+    "title": "WikiScape",
+    "description": "A cross-platform Wikipedia reader built with React Native and Expo.",
+    "technologies": "React Native | TypeScript | Expo",
+    "image": "assets/wikiscape.png",
+    "alt": "WikiScape App",
+    "live": "https://wikiscape.app",
+    "source": "https://github.com/bryce-hoehn/WikiScape"
+  },
   {
     "title": "Portfolio Website",
     "description": "Modern React portfolio showcasing UX development skills with responsive design and contact form integration.",
@@ -34,15 +43,6 @@
     "alt": "NYT Code Redeemer Extension",
     "live": "https://addons.mozilla.org/en-US/firefox/addon/nytimes-code-redeemer/",
     "source": "https://github.com/bryce-hoehn/nyt-code-redeemer"
-  },
-  {
-    "title": "Books-Unlimited",
-    "description": "Class project demonstrating web development fundamentals - a book catalog with search, filtering, and dynamic content rendering.",
-    "technologies": "PHP | MySQL | Javascript",
-    "image": "assets/books-unlimited-dashboard.png",
-    "alt": "Books-Unlimited Screenshot",
-    "live": "https://ischooldev.ischool.kent.edu/~bhoehn/webapp/index.php",
-    "source": "https://github.com/bryce-hoehn/books-unlimited"
   },
   {
     "title": "Discord-M1",
