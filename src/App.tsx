@@ -11,17 +11,6 @@ function App() {
   // Custom hooks for business logic
   const { portfolioProjects, isLoading } = usePortfolio()
   const { showScrollTop, isScrolled, scrollToTop, scrollToSection } = useScroll()
-  const {
-    formData,
-    isSubmitting,
-    formFeedback,
-    formErrors,
-    handleInputChange,
-    handleSubmit,
-    setTurnstileToken,
-    clearTurnstileToken
-  } = useContactForm()
-
 
   return (
     <>
@@ -38,17 +27,6 @@ function App() {
         <Portfolio 
           isLoading={isLoading}
           portfolioProjects={portfolioProjects}
-        />
-
-        <Contact
-          formData={formData}
-          isSubmitting={isSubmitting}
-          formFeedback={formFeedback}
-          formErrors={formErrors}
-          setTurnstileToken={setTurnstileToken}
-          clearTurnstileToken={clearTurnstileToken}
-          handleInputChange={handleInputChange}
-          handleSubmit={handleSubmit}
         />
 
         <Footer 
