@@ -1,7 +1,6 @@
 import { Navigation } from './components/layout/Navigation'
 import { Masthead } from './components/sections/Masthead'
 import { Portfolio } from './components/sections/Portfolio'
-import { Contact } from './components/sections/Contact'
 import { Footer } from './components/layout/Footer'
 import { usePortfolio } from './hooks/usePortfolio'
 import { useScroll } from './hooks/useScroll'
