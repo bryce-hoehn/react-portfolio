@@ -5,7 +5,6 @@ import { Contact } from './components/sections/Contact'
 import { Footer } from './components/layout/Footer'
 import { usePortfolio } from './hooks/usePortfolio'
 import { useScroll } from './hooks/useScroll'
-import { useContactForm } from './hooks/useContactForm'
 
 function App() {
   // Custom hooks for business logic
